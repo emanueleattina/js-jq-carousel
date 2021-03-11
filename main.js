@@ -19,18 +19,17 @@ function slider()
         images.removeClass('active').next('img').addClass('active');
         circle.removeClass('active').next('i').addClass('active');
 
-        if(images.hasClass('active') && images.hasClass('last'))
+        if($('.images img.last').hasClass('active'))
         {
-            images.removeClass('active');
-            images.hasClass('first').addClass('active');
+            $('.images img.last').removeClass('active');
+            $('.images img.first').addClass('active')
         }
 
-
-        // if (images.hasClass('active') && circle.hasClass('active'))
-        // {
-        //     images.removeClass('active').siblings('.images img:first').addClass('active');
-        //     circle.removeClass('active').siblings('.nav .fas:first').addClass('active');
-        // }
+        if($('.nav i.last').hasClass('active'))
+        {
+            $('.nav i.last').removeClass('active');
+            $('.nav i.first').addClass('active')
+        }
     });
 
     btnPrev.click(function ()
