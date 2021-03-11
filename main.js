@@ -16,19 +16,27 @@ function slider()
 
         console.log(images);
 
-        images.removeClass('active').next('img').addClass('active');
+        images.removeClass('active');
         circle.removeClass('active').next('i').addClass('active');
 
-        if($('.images img.last').hasClass('active'))
+        if(images.hasClass('last'))
         {
-            $('.images img.last').removeClass('active');
-            $('.images img.first').addClass('active')
+            images.removeClass('active');
+            $('.images img.first').addClass('active');
+        }
+        else 
+        {
+            images.next('img').addClass('active');
         }
 
-        if($('.nav i.last').hasClass('active'))
+        if(circle.hasClass('last'))
         {
-            $('.nav i.last').removeClass('active');
-            $('.nav i.first').addClass('active')
+            circle.removeClass('active');
+            $('.nav i.first').addClass('active');
+        }
+        else 
+        {
+            circle.next('img').addClass('active');
         }
     });
 
@@ -44,6 +52,3 @@ function slider()
     });
     
 }
-
-// se l'elemento con classe last ha la classe active
-    // assegno la classe active all'elemento con la classe first
