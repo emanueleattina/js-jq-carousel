@@ -42,16 +42,16 @@ function slider()
 
         console.log(images);
 
-        images.removeClass('active').prev('img').addClass('active');
+        images.removeClass('active');
         circle.removeClass('active').prev('i').addClass('active');
 
-        if(images.hasClass('last') && circle.hasClass('last'))
+        if(images.hasClass('first') && circle.hasClass('first'))
         {
             images.removeClass('active');
-            $('.images img.first').addClass('active');
+            $('.images img.last').addClass('active');
 
             circle.removeClass('active');
-            $('.nav i.first').addClass('active');
+            $('.nav i.last').addClass('active');
         }
         else 
         {
